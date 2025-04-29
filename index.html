@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>医药法规与行业信息展示</title>
+    <style>
+        body { font-family: "微软雅黑", Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
+        .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px #ccc; }
+        h1 { color: #2a7ae2; text-align: center; }
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+        .nav button {
+            background: #2a7ae2;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .nav button.active, .nav button:hover {
+            background: #185ca1;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .law, .news, .survey, .analysis {
+            margin-bottom: 24px;
+        }
+        .law-title, .news-title, .survey-title, .analysis-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .law-content, .news-content, .survey-content, .analysis-content {
+            margin-top: 6px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>医药法规与行业信息展示</h1>
+        <div class="nav">
+            <button class="active" onclick="showSection('law')">医药法规</button>
+            <button onclick="showSection('news')">审批及新药上市新闻</button>
+            <button onclick="showSection('survey')">行业调查</button>
+            <button onclick="showSection('analysis')">竞品分析</button>
+        </div>
+        <div id="law" class="section active">
+            <div class="law">
+                <div class="law-title">《中华人民共和国药品管理法》</div>
+                <div class="law-content">
+                    该法律规范了药品的研制、生产、经营、使用等环节，保障公众用药安全。
+                </div>
+            </div>
+            <div class="law">
+                <div class="law-title">《疫苗管理法》</div>
+                <div class="law-content">
+                    明确疫苗的研发、生产、流通、预防接种等全过程的管理要求。
+                </div>
+            </div>
+            <!-- 你可以继续添加更多法规 -->
+        </div>
+        <div id="news" class="section">
+            <div class="news">
+                <div class="news-title">2024年新药A获批上市</div>
+                <div class="news-content">
+                    新药A通过国家药监局审批，成为今年首个获批的创新药物。
+                </div>
+            </div>
+            <!-- 你可以继续添加更多新闻 -->
+        </div>
+        <div id="survey" class="section">
+            <div class="survey">
+                <div class="survey-title">2023年中国医药行业市场调查</div>
+                <div class="survey-content">
+                    行业整体规模持续增长，创新药物研发投入加大。
+                </div>
+            </div>
+            <!-- 你可以继续添加更多行业调查 -->
+        </div>
+        <div id="analysis" class="section">
+            <div class="analysis">
+                <div class="analysis-title">竞品药物B与药物C对比分析</div>
+                <div class="analysis-content">
+                    药物B在疗效上略优于药物C，但价格更高，市场份额有待提升。
+                </div>
+            </div>
+            <!-- 你可以继续添加更多竞品分析 -->
+        </div>
+    </div>
+    <script>
+        function showSection(sectionId) {
+            // 隐藏所有section
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            // 移除所有按钮的active
+            document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
+            // 显示选中的section
+            document.getElementById(sectionId).classList.add('active');
+            // 给当前按钮加active
+            const btns = document.querySelectorAll('.nav button');
+            if (sectionId === 'law') btns[0].classList.add('active');
+            if (sectionId === 'news') btns[1].classList.add('active');
+            if (sectionId === 'survey') btns[2].classList.add('active');
+            if (sectionId === 'analysis') btns[3].classList.add('active');
+        }
+    </script>
+</body>
+</html>
