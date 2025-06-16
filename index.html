@@ -348,80 +348,6 @@
                     <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
                         <div class="p-6">
                             <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary">调查研究</span>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">1</div>
-                                    <div class="ml-3 flex-1">
-                                        <div class="font-medium">恒瑞医药</div>
-                                        <div class="text-xs text-neutral-500">研发投入: 58.6亿元</div>
-                                    </div>
-                                    <div class="w-24">
-                                        <div class="h-2 bg-neutral-200 rounded-full overflow-hidden">
-                                            <div class="h-full bg-primary" style="width: 92%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">2</div>
-                                    <div class="ml-3 flex-1">
-                                        <div class="font-medium">百济神州</div>
-                                        <div class="text-xs text-neutral-500">研发投入: 45.2亿元</div>
-                                    </div>
-                                    <div class="w-24">
-                                        <div class="h-2 bg-neutral-200 rounded-full overflow-hidden">
-                                            <div class="h-full bg-primary" style="width: 87%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">3</div>
-                                    <div class="ml-3 flex-1">
-                                        <div class="font-medium">信达生物</div>
-                                        <div class="text-xs text-neutral-500">研发投入: 36.8亿元</div>
-                                    </div>
-                                    <div class="w-24">
-                                        <div class="h-2 bg-neutral-200 rounded-full overflow-hidden">
-                                            <div class="h-full bg-primary" style="width: 81%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">4</div>
-                                    <div class="ml-3 flex-1">
-                                        <div class="font-medium">君实生物</div>
-                                        <div class="text-xs text-neutral-500">研发投入: 32.4亿元</div>
-                                    </div>
-                                    <div class="w-24">
-                                        <div class="h-2 bg-neutral-200 rounded-full overflow-hidden">
-                                            <div class="h-full bg-primary" style="width: 76%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">5</div>
-                                    <div class="ml-3 flex-1">
-                                        <div class="font-medium">再鼎医药</div>
-                                        <div class="text-xs text-neutral-500">研发投入: 28.5亿元</div>
-                                    </div>
-                                    <div class="w-24">
-                                        <div class="h-2 bg-neutral-200 rounded-full overflow-hidden">
-                                            <div class="h-full bg-primary" style="width: 71%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm link-hover" data-type="research" data-id="2">
-                                    查看完整榜单 <i class="fa fa-angle-right ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
-                        <div class="p-6">
-                            <div class="flex justify-between items-center mb-4">
                                 <h3 class="text-lg font-bold">2025年热门治疗领域投资分析</h3>
                                 <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-neutral-200 text-neutral-700">数据洞察</span>
                             </div>
@@ -752,15 +678,15 @@
                     <ul class="space-y-2">
                         <li class="flex items-start">
                             <i class="fa fa-map-marker mt-1 mr-3 text-neutral-400"></i>
-                            <span class="text-neutral-400">北京市海淀区中关村科技园区</span>
+                            <span class="text-neutral-400">山东青岛崂山区</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fa fa-phone mr-3 text-neutral-400"></i>
-                            <span class="text-neutral-400">400-123-4567</span>
+                            <span class="text-neutral-400">13280281889</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fa fa-envelope mr-3 text-neutral-400"></i>
-                            <span class="text-neutral-400">contact@medinfohub.com</span>
+                            <span class="text-neutral-400">julin@ouc.edu.cn</span>
                         </li>
                     </ul>
                 </div>
@@ -936,4 +862,35 @@
             // 模态框内容
             modal.innerHTML = `
                 <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-transform duration-300 scale-95" id="modal-content">
-                    <div class="p-6 border-b
+                    <div class="p-6 border-b border-neutral-200">
+                        <h2 class="text-xl font-bold mb-4">${type}详情</h2>
+                        <p>${type} ID: ${id}</p>
+                    </div>
+                    <div class="p-6">
+                        <!-- 这里可以添加更多详情内容 -->
+                    </div>
+                    <div class="p-6 border-t border-neutral-200">
+                        <button class="w-full btn-primary">关闭</button>
+                    </div>
+                </div>
+            `;
+            
+            // 添加到页面
+            document.body.appendChild(modal);
+            
+            // 显示模态框
+            modal.classList.remove('opacity-0');
+            modal.classList.add('opacity-100');
+            
+            // 关闭模态框
+            const closeButton = modal.querySelector('.btn-primary');
+            closeButton.addEventListener('click', () => {
+                modal.classList.add('opacity-0');
+                setTimeout(() => {
+                    document.body.removeChild(modal);
+                }, 300);
+            });
+        }
+    </script>
+</body>
+</html>
