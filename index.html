@@ -53,6 +53,22 @@
             .btn-secondary {
                 @apply bg-white text-primary border border-primary px-6 py-3 rounded-lg hover:bg-primary/5 transition-all duration-200;
             }
+            .link-hover {
+                @apply relative inline-flex items-center overflow-hidden transition-all duration-300 hover:text-primary/80;
+            }
+            .link-hover::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: currentColor;
+                transition: width 0.3s ease;
+            }
+            .link-hover:hover::after {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -178,7 +194,7 @@
                         <p class="text-neutral-600 mb-4">新修订的药品生产质量管理规范将于2025年7月1日正式实施，重点加强了数据完整性和风险管理要求。</p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-neutral-500">2025-05-15</span>
-                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm">查看详情 <i class="fa fa-angle-right ml-1"></i></a>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm link-hover" data-type="regulation" data-id="1">查看详情 <i class="fa fa-angle-right ml-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -193,7 +209,7 @@
                         <p class="text-neutral-600 mb-4">国家药监局发布创新药审批加速程序指南，明确突破性治疗药物、优先审评审批等通道的适用范围和申报流程。</p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-neutral-500">2025-04-28</span>
-                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm">查看详情 <i class="fa fa-angle-right ml-1"></i></a>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm link-hover" data-type="regulation" data-id="2">查看详情 <i class="fa fa-angle-right ml-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -208,13 +224,13 @@
                         <p class="text-neutral-600 mb-4">ICMRA发布了关于人工智能在药物研发中应用的监管框架，为全球药品监管机构提供了统一的指导原则。</p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-neutral-500">2025-06-05</span>
-                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm">查看详情 <i class="fa fa-angle-right ml-1"></i></a>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm link-hover" data-type="regulation" data-id="3">查看详情 <i class="fa fa-angle-right ml-1"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="mt-8 text-center">
-                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium link-hover">
                     查看更多法规 <i class="fa fa-long-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -255,7 +271,7 @@
                             </div>
                             <h3 class="text-lg font-bold mb-2">阿尔茨海默病治疗药物Ⅲ期临床试验取得积极结果</h3>
                             <p class="text-neutral-600 mb-3 line-clamp-2">最新公布的Ⅲ期临床试验数据显示，该药物能够显著减缓轻度至中度阿尔茨海默病患者的认知能力下降速度。</p>
-                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm">阅读全文 <i class="fa fa-angle-right ml-1"></i></a>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm link-hover" data-type="news" data-id="1">阅读全文 <i class="fa fa-angle-right ml-1"></i></a>
                         </div>
                     </div>
                     <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
@@ -266,7 +282,7 @@
                             </div>
                             <h3 class="text-lg font-bold mb-2">国家医保目录调整启动，多款创新药有望纳入</h3>
                             <p class="text-neutral-600 mb-3 line-clamp-2">2025年国家医保药品目录调整工作正式启动，专家预测将有更多临床急需的创新药物通过谈判纳入医保支付范围。</p>
-                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm">阅读全文 <i class="fa fa-angle-right ml-1"></i></a>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm link-hover" data-type="news" data-id="2">阅读全文 <i class="fa fa-angle-right ml-1"></i></a>
                         </div>
                     </div>
                     <div class="bg-white rounded-xl shadow-sm overflow-hidden card-hover">
@@ -277,13 +293,13 @@
                             </div>
                             <h3 class="text-lg font-bold mb-2">基因编辑技术在罕见病治疗领域取得重大突破</h3>
                             <p class="text-neutral-600 mb-3 line-clamp-2">科学家利用CRISPR基因编辑技术成功治疗了一种罕见的遗传性代谢疾病，为基因治疗领域开辟了新的方向。</p>
-                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm">阅读全文 <i class="fa fa-angle-right ml-1"></i></a>
+                            <a href="#" class="text-primary hover:text-primary/80 font-medium text-sm link-hover" data-type="news" data-id="3">阅读全文 <i class="fa fa-angle-right ml-1"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="mt-8 text-center">
-                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium link-hover">
                     查看更多新闻 <i class="fa fa-long-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -322,7 +338,7 @@
                             </div>
                         </div>
                         <div class="mt-6">
-                            <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm">
+                            <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm link-hover" data-type="research" data-id="1">
                                 下载完整报告 <i class="fa fa-download ml-2"></i>
                             </a>
                         </div>
@@ -398,7 +414,7 @@
                                 </div>
                             </div>
                             <div class="mt-4">
-                                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm">
+                                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm link-hover" data-type="research" data-id="2">
                                     查看完整榜单 <i class="fa fa-angle-right ml-2"></i>
                                 </a>
                             </div>
@@ -438,7 +454,7 @@
                                         <div class="text-sm font-medium">总投资金额</div>
                                         <div class="text-xl font-bold text-neutral-800">$268亿</div>
                                     </div>
-                                    <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm">
+                                    <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm link-hover" data-type="research" data-id="3">
                                         查看详情 <i class="fa fa-angle-right ml-2"></i>
                                     </a>
                                 </div>
@@ -448,7 +464,7 @@
                 </div>
             </div>
             <div class="mt-8 text-center">
-                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium link-hover">
                     查看更多行业调查 <i class="fa fa-long-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -632,7 +648,7 @@
                                     <div class="text-sm font-medium">全球在研PD-1单抗总数</div>
                                     <div class="text-xl font-bold text-neutral-800">120个</div>
                                 </div>
-                                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm">
+                                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm link-hover" data-type="competitor" data-id="1">
                                     查看详情 <i class="fa fa-angle-right ml-2"></i>
                                 </a>
                             </div>
@@ -641,7 +657,7 @@
                 </div>
             </div>
             <div class="mt-8 text-center">
-                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium link-hover">
                     查看更多竞品分析 <i class="fa fa-long-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -884,7 +900,41 @@
                 cutout: '70%'
             }
         });
-    </script>
-</body>
-</html>
-    
+
+        // 查看详情链接点击事件
+        document.querySelectorAll('.link-hover').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 添加点击效果
+                this.classList.add('scale-95');
+                setTimeout(() => {
+                    this.classList.remove('scale-95');
+                }, 200);
+                
+                // 获取数据
+                const type = this.getAttribute('data-type');
+                const id = this.getAttribute('data-id');
+                
+                // 在实际应用中，这里可以根据type和id加载对应的详情内容
+                console.log(`查看${type}详情，ID: ${id}`);
+                
+                // 显示模态框或跳转到详情页
+                showDetailModal(type, id);
+            });
+        });
+
+        // 显示详情模态框（模拟）
+        function showDetailModal(type, id) {
+            // 在实际应用中，这里可以根据type和id加载对应的详情内容
+            // 这里只是一个模拟示例
+            
+            // 创建模态框
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50 opacity-0 transition-opacity duration-300 pointer-events-none';
+            modal.id = 'detail-modal';
+            
+            // 模态框内容
+            modal.innerHTML = `
+                <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-transform duration-300 scale-95" id="modal-content">
+                    
