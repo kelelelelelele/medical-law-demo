@@ -2,53 +2,161 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>医药法规与行业信息展示</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: "微软雅黑", Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
-        .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px #ccc; }
-        h1 { color: #2a7ae2; text-align: center; }
+        :root {
+            --primary-color: #2a7ae2;
+            --primary-dark: #185ca1;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #f8f9fa;
+            --card-bg: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', "微软雅黑", Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
         .nav {
             display: flex;
             justify-content: center;
-            margin-bottom: 30px;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
+
         .nav button {
-            background: #2a7ae2;
+            background: var(--primary-color);
             color: #fff;
             border: none;
-            padding: 10px 24px;
-            border-radius: 5px;
-            font-size: 1em;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: var(--transition);
+            font-weight: 500;
+            min-width: 160px;
         }
-        .nav button.active, .nav button:hover {
-            background: #185ca1;
+
+        .nav button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
         }
+
+        .nav button.active {
+            background: var(--primary-dark);
+            box-shadow: var(--shadow);
+        }
+
         .section {
             display: none;
+            animation: fadeIn 0.5s ease;
         }
+
         .section.active {
-            display: block;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
-        .law, .news, .survey, .analysis {
-            margin-bottom: 24px;
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
         }
-        .law-title, .news-title, .survey-title, .analysis-title {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #333;
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
-        .law-content, .news-content, .survey-content, .analysis-content {
-            margin-top: 6px;
-            color: #555;
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .card-content {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem auto;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav button {
+                width: 100%;
+            }
+
+            .section.active {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>医药法规与行业信息展示</h1>
+        <div class="header">
+            <h1>医药法规与行业信息展示</h1>
+        </div>
         <div class="nav">
             <button class="active" onclick="showSection('law')">医药法规</button>
             <button onclick="showSection('news')">审批及新药上市新闻</button>
@@ -56,46 +164,47 @@
             <button onclick="showSection('analysis')">竞品分析</button>
         </div>
         <div id="law" class="section active">
-            <div class="law">
-                <div class="law-title">《中华人民共和国药品管理法》</div>
-                <div class="law-content">
-                    该法律规范了药品的研制、生产、经营、使用等环节，保障公众用药安全。
+            <div class="card">
+                <div class="card-title">《中华人民共和国药品管理法》</div>
+                <div class="card-content">
+                    该法律规范了药品的研制、生产、经营、使用等环节，保障公众用药安全。明确规定了药品上市许可持有人制度，强化了药品全生命周期管理。
                 </div>
+                <div class="date">更新时间：2024-03-20</div>
             </div>
-            <div class="law">
-                <div class="law-title">《疫苗管理法》</div>
-                <div class="law-content">
-                    明确疫苗的研发、生产、流通、预防接种等全过程的管理要求。
+            <div class="card">
+                <div class="card-title">《疫苗管理法》</div>
+                <div class="card-content">
+                    明确疫苗的研发、生产、流通、预防接种等全过程的管理要求。建立了疫苗追溯体系，确保疫苗质量安全。
                 </div>
+                <div class="date">更新时间：2024-03-19</div>
             </div>
-            <!-- 你可以继续添加更多法规 -->
         </div>
         <div id="news" class="section">
-            <div class="news">
-                <div class="news-title">2024年新药A获批上市</div>
-                <div class="news-content">
-                    新药A通过国家药监局审批，成为今年首个获批的创新药物。
+            <div class="card">
+                <div class="card-title">2024年新药A获批上市</div>
+                <div class="card-content">
+                    新药A通过国家药监局审批，成为今年首个获批的创新药物。该药物在临床试验中显示出显著的疗效和良好的安全性。
                 </div>
+                <div class="date">发布时间：2024-03-18</div>
             </div>
-            <!-- 你可以继续添加更多新闻 -->
         </div>
         <div id="survey" class="section">
-            <div class="survey">
-                <div class="survey-title">2023年中国医药行业市场调查</div>
-                <div class="survey-content">
-                    行业整体规模持续增长，创新药物研发投入加大。
+            <div class="card">
+                <div class="card-title">2023年中国医药行业市场调查</div>
+                <div class="card-content">
+                    行业整体规模持续增长，创新药物研发投入加大。生物医药领域投资热度持续上升，国际化合作不断加强。
                 </div>
+                <div class="date">调查时间：2024-03-17</div>
             </div>
-            <!-- 你可以继续添加更多行业调查 -->
         </div>
         <div id="analysis" class="section">
-            <div class="analysis">
-                <div class="analysis-title">竞品药物B与药物C对比分析</div>
-                <div class="analysis-content">
-                    药物B在疗效上略优于药物C，但价格更高，市场份额有待提升。
+            <div class="card">
+                <div class="card-title">竞品药物B与药物C对比分析</div>
+                <div class="card-content">
+                    药物B在疗效上略优于药物C，但价格更高，市场份额有待提升。建议关注药物B的长期安全性数据。
                 </div>
+                <div class="date">分析时间：2024-03-16</div>
             </div>
-            <!-- 你可以继续添加更多竞品分析 -->
         </div>
     </div>
     <script>
@@ -108,10 +217,10 @@
             document.getElementById(sectionId).classList.add('active');
             // 给当前按钮加active
             const btns = document.querySelectorAll('.nav button');
-            if (sectionId === 'law') btns[0].classList.add('active');
-            if (sectionId === 'news') btns[1].classList.add('active');
-            if (sectionId === 'survey') btns[2].classList.add('active');
-            if (sectionId === 'analysis') btns[3].classList.add('active');
+            const index = ['law', 'news', 'survey', 'analysis'].indexOf(sectionId);
+            if (index !== -1) {
+                btns[index].classList.add('active');
+            }
         }
     </script>
 </body>
